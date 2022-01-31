@@ -1,0 +1,137 @@
+Priority Queue -->  gives the highest priority element from queue at first. 
+					Since Queue follows the First In First Out principle, we can access only the head of the queue. 
+					Complexity for below operations : 
+					* pq.peek() - O(1)
+					* pq.add() - O(logn)
+					* pq.remove() - O(logn)
+	
+Syntax 1 : PriorityQueue<Integer> pq = new PriorityQueue<>();  ---- Priority to smaller value
+		
+***	NOTE : By deafult in JAVA "smaller element" are given highest priority
+		
+Syntax 2  : PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder()); --- Priority to Larger Value
+		
+		
+		
+		
+		
+Theory  ---
+-------
+
+For the implementation of the "PRIORITY QUEUES" -  the best DS that can be implemented with minimum time comeplexity
+of O(logn) is BINARY TREE. 
+But for this to be effective BST has to be balanced always, to achevie this complexity.
+Thus to staisfy this BST are addede with below property and was named HEAP.
+
+
+HEAPS -are DS which satisfy below two condns 
+    1. Heap are the "Compete binary tree - CBT" i.e. all the levels has to be complete, 
+       only eception in last level from left to right conituity
+    2. CBT must satify the HEAP ORDER PROPERTY--
+       MIN HEAP -- > (each root must be smaller then its both child)
+       MAX HEAP  --> (each root must be greater then its both children)
+       
+       
+HEaps are used to implement the PRIORITY QUEUES 
+Height of CBT -> logn - always in worst and in best case both.
+Thus for all the opertaions complexity will be O(logn)
+Insertion in CBT can be possible by LEVEL ORDER - complexity in that is O(n)
+Thus converting CBT to array (PQ are actually implementes as array , just assumed as CBT structure)
+For each node its child are stored at (2i+1 , 2i+2) position in array.
+Thus by this CBT to array  -INSERTIN and DELETION will be of complexity O(1) only.
+-----" Here we are actually implementing on array but it has to be visulaized as CBT "-----
+* In arrray relation between childs and parent index--> 
+                Child Indexs = 2(Parent Index)+1 , 2(Parent index)+2
+Priority Queues - Are of two types
+        * Min PQ
+        * Max PQ
+* HEAP DS is used in sorting type of ques
+* IDENTIFICATION -- Kth elemnt and MIN/MAX is asked
+* WHY HEAP --> Complexity in best sorting - O(nlogn)
+               Complexity with heap to find 'kth' element out of 'n' element - O(nlogk) 
+--> STL LIBARAY inbuilt heaps - 
+    1) Max Heap --> priority_queue<int> maxHeap;
+    2) Min Heap --> priority_queue(int, vector<int>, greater<int>) minHeap ; 
+    
+    
+    
+    
+    
+    
+  Implementation MINIMUM Priorty Queue ---
+  ---------------------------------
+  
+class PriorityQueue
+{
+private:
+    vector<int> pq;
+public:
+
+    int getsize(){
+        return pq.size();
+    }
+    
+    bool isempty(){
+        return pq.size()==0;
+    }
+
+    int getmin(){
+        if (pq.size()==0)
+        return 0;
+        else
+        return pq[0];
+    }
+
+
+
+    void insertdata(int data){
+        pq.push_back(data);
+        int child_idx = pq.size()-1;
+
+        while (child_idx > 0)
+        {
+            int parent_idx = (child_idx-1)/2;
+            if (pq[child_idx] < pq[parent_idx])
+            {   //swap the values
+                int temp = pq[parent_idx];
+                pq[parent_idx] = pq[child_idx];
+                pq[child_idx] = temp;
+                child_idx = parent_idx;
+            }
+            else
+                break; 
+        }
+    }
+
+
+
+    void print_pq(){
+        cout<<"\n";
+        for (int i = 0; i < pq.size(); i++)
+            cout<<pq[i]<<" - ";
+    }
+
+
+
+	int removeMin(){ // i.e. removing the very first element of array or root element of CBT
+	    if (pq.size()==0)
+	        return 0;
+	
+	    int ans = pq[0];
+	    pq[0] = pq[pq.size()-1];
+	    pq.push_back(pq.size()-1);
+	
+	    int p_idx = 0;
+	    int c1_idx = (2*p_idx) + 1;
+	    int c2_idx = (2*p_idx) + 2;
+	    int min_idx = 0;
+	
+	    while (c1_idx < pq.size() and c2_idx < pq.size() )
+	    {
+	        if (pq[c1_idx] > pq[c2_idx])
+	            min_idx = c2_idx;
+	    }	
+	    return ans;
+	}
+
+} ;  
