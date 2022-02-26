@@ -1,5 +1,6 @@
 package hashing;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,7 +8,7 @@ public class LongestConsequitiveSequence {
 	
 	/*
 	 * Given : unsorted array of integers nums, return the length of the longest consecutive elements sequence.
-	 * 			nums = [100,4,101,102,1,3,2] --> Ans: 4
+	 * 			nums = {10,5,9,1,11,8,6,15,3,12,2} --> Ans: {8  9  10  11  12}
 
 	 * Solution 1 : Sort array, and by iterating for each element and taking counter if consecutive
 	 * 				Time- O(nlogn + n) ~ nlogn, Space - O(1)
@@ -23,28 +24,30 @@ public class LongestConsequitiveSequence {
 	 * 				Time- O(n + n + n) ~ n, Space - O(n)
 	 * */
 	
-	 public int longestConsecutive(int[] nums) {
-	        int maxConsElements = 0;
-	        
-	        //Putting all Array element in HASHSET(no repeated element)
-	        Set<Integer> hashSet = new HashSet<Integer>();
-	        for(int element : nums) {
-	        	hashSet.add(element);}
-	        
-	        for (int i = 0; i < nums.length; i++) {
-				if(!hashSet.contains(nums[i]-1)) {
-					int currentConsElement = 0;
-					int element = nums[i];
-					
-					while(hashSet.contains(element)) {
-						currentConsElement++;
-						element++;
-					}
-					maxConsElements = Math.max(maxConsElements, currentConsElement);
-				}
-			}
-	        
-	        return maxConsElements;
+	 public void longestConsecutive(int[] arr) {
+
+		 HashMap<Integer, Boolean> charTrack = new HashMap<>();
+		 //storing all elements in hashmap with 'true' as default key
+		 for(int i: arr){
+			 charTrack.put(i,true);
+		 }
+		// after this loop only the starting element of all the subsequnces will me marked true, rest false
+		 for (int i: arr){
+			 if(charTrack.containsKey(i-1))
+				 charTrack.put(i,false);
+		 }
+		 // if the element is true then start printing its subsequences if present in hashmap
+		 for(int i: charTrack.keySet()){
+			 if(charTrack.get(i)==true){
+				 boolean flag =true;
+				 int no = i;
+				 while(flag){
+					 System.out.print(no+"  ");
+					 if (charTrack.get(++no)==null) flag =false;
+				 }
+				 System.out.println();
+			 }
+		 }
 	    }
 
 }
