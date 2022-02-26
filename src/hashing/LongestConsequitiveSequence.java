@@ -13,7 +13,7 @@ public class LongestConsequitiveSequence {
 	 * 				Time- O(nlogn + n) ~ nlogn, Space - O(1)
 	 * 
 	 * Solition 2 : Iterate over array and store all elements in an Hash set
-	 * 				(Aim to find smallest element for each subset of consecutive element & start cout from that samllest element)
+	 * 				(Aim to find smallest element for each subset of consecutive element & start count from that smallest element)
 	 * 				Take element and check wether (element-1) exits in HASHSET-- 
 	 * 				* If exist     --> do nothing, move to next element
 	 * 				* If not exist --> make increase element by 1 (element + 1), and check does that exist in set.
