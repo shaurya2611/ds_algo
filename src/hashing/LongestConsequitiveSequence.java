@@ -31,7 +31,7 @@ public class LongestConsequitiveSequence {
 		 for(int i: arr){
 			 charTrack.put(i,true);
 		 }
-		// after this loop only the starting element of all the subsequnces will me marked true, rest false
+		// after this loop only the starting element of all the subsequences will be marked true, rest false
 		 for (int i: arr){
 			 if(charTrack.containsKey(i-1))
 				 charTrack.put(i,false);

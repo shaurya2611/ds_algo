@@ -1,8 +1,6 @@
 package hashing;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class FourElementSum {
 	
@@ -11,13 +9,37 @@ public class FourElementSum {
 	 * 			such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.
 	 * 			Input: nums = [1,0,-1,1,1,0,-2,2,2], target = 0
 				Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
-				
-	   Solution 1: Sorting the array. Fixing two pointers starting from 1st and 2nd element, and finding rest 2 element
-	   				No duplicates iwll be there as 
+
+	  Solution 1: Sort the array +  use three pointer i,j & k  + Binary search search on (k-lenght arr)
+				Time - O(nlogn + n^3logn) , Space - O(1)
+				here  nlog --> bcz of sorting , n^3 --> bcz of 3 for loops 3pointer taken and logn --> for binary search
+				space O(1) --> although space taken to return and not taken in complexity
+	* * */
+	 public static void find4sumBrutforce(int[] arr, int sum){
+		 Arrays.sort(arr);
+		 HashSet<String> solution = new HashSet<>();
+		 for (int i=0; i<arr.length-3;i++){
+			 for (int j=i+1; j<arr.length-2;j++){
+				 for (int k=j+1;k<arr.length-1; k++){
+					 int sum3Numbers = arr[i] + arr[j] + arr[k];
+					 int leftSum = sum - sum3Numbers;
+					 int indx = Arrays.binarySearch(arr,k+1,arr.length,leftSum);
+					 if(indx>=0){
+						 solution.add(arr[i]+" "+arr[j]+' '+arr[k]+' '+arr[indx]);
+					 }
+				 }
+			 }
+		 }
+		 System.out.println(solution);
+	 }
+
+
+	  /* Solution 2: Sorting the array. Fixing two pointers starting from 1st and 2nd element, and finding rest 2 element
+	   				No duplicates will be there as
 	   				Time - O(nlogn + n^3) , Space - O(1)
-	   		
-				
-	 * */
+	   				here  nlog --> bcz of sorting , n^3 --> bcz of 2 for loops 2pointer taken and another n for the while loop
+	   				space O(1) --> although space taken to return and not taken in complexity
+	   				*/
 	 public ArrayList<List<Integer>> find4Numbers(int A[], int n, int X)
 	    {
 		 	ArrayList<List<Integer>> returnList = new ArrayList<List<Integer>>();
@@ -67,4 +89,9 @@ public class FourElementSum {
 	        }
 			return returnList; 
 	    }
+
+public static  void main(String[] args){
+		 int[] arr = {1,0,-1,1,1,0,-2,2,2};
+		find4sumBrutforce(arr,0);
+}
 }

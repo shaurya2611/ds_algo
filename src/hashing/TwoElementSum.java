@@ -3,7 +3,7 @@ package hashing;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TwoSum {
+public class TwoElementSum {
 	
 	/*
     Given : Given an array of integers nums and an integer target, return indices of the two numbers such 
