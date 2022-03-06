@@ -90,8 +90,43 @@ public class FourElementSum {
 			return returnList; 
 	    }
 
+
+	/* Solution 3: Using Hasing -- store two sum paor in hash map  and Again using for loops form 2 sum and search in map for complete sum
+	* 				Time - O(n^2 + n^2), Space - O(n^2)
+	* */
+	static class pair{
+		int i;
+		int j;
+		public pair(int i, int j){
+			this.i = i;
+			this.j = j;
+		}
+	}
+
+	public static void fourSumUsingHashing(int[] arr, int sum) {
+		HashMap<Integer, pair> twoSum = new HashMap<Integer, pair>();
+		for (int i = 0; i < arr.length-1; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+				twoSum.put(arr[i] + arr[j], new pair(i,j));
+			}
+		}
+		for (int k = 0; k < arr.length-1; k++) {
+			for (int l = k + 1; l < arr.length; l++) {
+				int leftSum = sum - arr[k] + arr[l];
+				if (twoSum.containsKey(leftSum)) {
+					//check for duplciate index, all 4 index should be different
+					pair p = twoSum.get(leftSum);
+					if(p.i!=k && p.i!=l && p.j!=k && p.j!=l)
+						System.out.println(p.i + " " + arr[p.j] + " " + arr[k] + " " + arr[l]);
+				}
+			}
+		}
+	}
+
 public static  void main(String[] args){
-		 int[] arr = {1,0,-1,1,1,0,-2,2,2};
+		 int[] arr = {10, 20, 30, 40, 1, 2};
 		find4sumBrutforce(arr,0);
+	System.out.println("-------------------------");
+	fourSumUsingHashing(arr,91);
 }
 }

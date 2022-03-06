@@ -10,7 +10,8 @@ public class TwoElementSum {
             that they add up to target.
             
     Solution 1 : Comparing each and every element with its right array elements to make up sum = target
-                  Time - O(n*n) ,   Space - O(1)
+                    i.e Two pointer --> forming all apir and check their sum
+                  Time - O(n^2) ,   Space - O(1)
                   
     Solution 2 : Using hash map, take element find (target - element) in map if present return else
                   store that element with its index in hash table.
