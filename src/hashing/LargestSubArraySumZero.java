@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 // SUBARRAY - sub-array are always continuous set of elements from the array
 
-public class LargestSubArrayZeroSum {  //same as LongestSubarrayEqual_0and1
+public class LargestSubArraySumZero {  //same as LongestSubarrayEqual_0and1
 /*
  * Given 	 : An array and find the largest sub array with sum zero
 				A[] = {15,-2,2,-8,1,7,10,23}    Output: 5
