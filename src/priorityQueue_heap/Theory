@@ -18,30 +18,30 @@ Syntax 2  : PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseO
 Theory  ---
 -------
 
-For the implementation of the "PRIORITY QUEUES" -  the best DS that can be implemented with minimum time comeplexity
+For the implementation of the "PRIORITY QUEUES" -  the best DS that can be implemented with minimum time complexity
 of O(logn) is BINARY TREE. 
-But for this to be effective BST has to be balanced always, to achevie this complexity.
-Thus to staisfy this BST are addede with below property and was named HEAP.
+But for this to be effective, BST has to be balanced always, to achieve this complexity.
+Thus to satisfy this BST are added with below property and was named HEAP.
 
 
 HEAPS -are DS which satisfy below two condns 
     1. Heap are the "Compete binary tree - CBT" i.e. all the levels has to be complete, 
-       only eception in last level from left to right conituity
-    2. CBT must satify the HEAP ORDER PROPERTY--
+       only exception in last level from left to right continuity
+    2. CBT must satisfy the HEAP ORDER PROPERTY--
        MIN HEAP -- > (each root must be smaller then its both child)
        MAX HEAP  --> (each root must be greater then its both children)
        
        
-HEaps are used to implement the PRIORITY QUEUES 
+Heaps are used to implement the PRIORITY QUEUES
 Height of CBT -> logn - always in worst and in best case both.
 Thus for all the opertaions complexity will be O(logn)
 Insertion in CBT can be possible by LEVEL ORDER - complexity in that is O(n)
-Thus converting CBT to array (PQ are actually implementes as array , just assumed as CBT structure)
+Thus converting CBT to array (PQ are actually implements as array , just assumed as CBT structure)
 For each node its child are stored at (2i+1 , 2i+2) position in array.
 Thus by this CBT to array  -INSERTIN and DELETION will be of complexity O(1) only.
------" Here we are actually implementing on array but it has to be visulaized as CBT "-----
-* In arrray relation between childs and parent index--> 
-                Child Indexs = 2(Parent Index)+1 , 2(Parent index)+2
+-----" Here we are actually implementing on array but it has to be visualized as CBT "-----
+* In array relation between childs and parent index-->
+                Child Index = 2(Parent Index)+1 , 2(Parent index)+2
 Priority Queues - Are of two types
         * Min PQ
         * Max PQ
