@@ -57,7 +57,7 @@ public class Q3_MultiSolverPath {
 
         vertices[src] = true;
         for (Edge e : graph.get(src)){
-            if (vertices[src]==false){
+            if (vertices[e.neighbour]==false){
                 printAllPath(e.neighbour,dest,graph,vertices,psf+e.neighbour,wsf+e.distance, criterion);
             }
         }

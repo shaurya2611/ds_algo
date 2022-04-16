@@ -17,7 +17,7 @@ public class Q1_HasPathDFS {
         // iterating over all the neighbour node(connecting edges) of a node
         for ( Edge e: graph.get(src)){
             // if already a point is visited don't visit that again
-             if(vertcies[src]==false){
+             if(vertcies[e.neighbour]==false){
                  boolean pathFound = hasPath(e.neighbour,dest,graph,vertcies);
                  if (pathFound==true)
                      return  true;
