@@ -16,12 +16,12 @@ Solution : Iterate over each vertex and for each vertex's form possible tree and
 * */
 public class Q4_ConnectedComponents {
 
-    static void findAllConnectedComponents(ArrayList<ArrayList<Edge>> graph){
+    static ArrayList<ArrayList<Integer>> findAllConnectedComponents(ArrayList<ArrayList<Edge>> graph){
         ArrayList<ArrayList<Integer>> componentsList = new ArrayList<>();
-        boolean visited[] = new boolean[graph.size()];
+        boolean[] visited = new boolean[graph.size()];
 
         for (int i=0;i<graph.size();i++){
-            if(visited[i]==false){
+            if(!visited[i]){
                 ArrayList<Integer> components = new ArrayList<>();
                 drawTreeAndGenerateComponents(i,graph,visited,components);
                 componentsList.add(components);
@@ -29,21 +29,27 @@ public class Q4_ConnectedComponents {
         }
 
         System.out.println(componentsList);
-    }
 
-    static void drawTreeAndGenerateComponents(int vertices, ArrayList<ArrayList<Edge>> graph, boolean[] visited,ArrayList<Integer> components){
-        visited[vertices] = true;
-        components.add(vertices);
-        for (Edge e: graph.get(vertices)){
-            if(visited[e.neighbour]==false){
+        return componentsList;
+    }
+    /*
+    * Mark the source as visisted
+    * Add the components
+    * Call on all the neighbours
+    * */
+
+    static void drawTreeAndGenerateComponents(int source, ArrayList<ArrayList<Edge>> graph, boolean[] visited,ArrayList<Integer> components){
+        visited[source] = true;
+        components.add(source);
+        for (Edge e: graph.get(source)){
+            if(!visited[e.neighbour]){
                 drawTreeAndGenerateComponents(e.neighbour,graph,visited,components);
             }
         }
     }
 
-    public static void main(String args[]){
+    public static void main(String[] args ){
         ArrayList<ArrayList<Edge>> graph = new ArrayList<>();
-        boolean vertices[] = new boolean[graph.size()];
         findAllConnectedComponents(graph);
 
     }
