@@ -43,7 +43,7 @@ public class Q9_BFSTraversal {
 
                     System.out.println(p.vertex +'@'+p.psf); // 3. Perform work/operation
 
-                    for(Edge e: graph.get(i)){ // 4. Add neighbours
+                    for(Edge e: graph.get(i)){ // 4. Add neighbours if they are not visited
                         if(visited[e.neighbour]==false)
                             queue.add(new Pair(e.neighbour,p.psf+e.neighbour));
                     }
