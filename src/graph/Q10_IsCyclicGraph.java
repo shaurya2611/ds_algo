@@ -33,9 +33,9 @@ public class Q10_IsCyclicGraph {
                 queue.add(new Pair(i,i+""));
 
                 while(!queue.isEmpty()){
-                    Pair p = queue.poll();
+                    Pair p = queue.poll(); //1. remove from queue
 
-                    if(visited[p.vertex]==true)
+                    if(visited[p.vertex]==true) // 2. Check visited, if visited continue else mark visited
                         return  true; // i.e. graph is cyclic
                     else
                         visited[p.vertex] = true; // else mark visited
