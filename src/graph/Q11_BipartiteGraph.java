@@ -3,11 +3,12 @@ package graph;
 import java.util.*;
 
 /*
-Bipartite : or BIGRAPH, whose vertices can be divided into two disjoint and independent sets and ,every edge connects a vertex in to one in.
+Bipartite : Theory-1 :
+            or BIGRAPH, whose vertices can be divided into two disjoint and independent sets and ,every edge connects a vertex in to one in.
             If cycle of graph ODD length --> never bipartite.
             Every non-cyclic graph is bipartite.
 
-Solution  : In case of non-cyclic graph --> bipartite always
+Solution 1 : In case of non-cyclic graph --> bipartite always
                                             Apply BFS (BFS travel is level wise). So alternatively put same level elements in same set
             In case of cyclic graph --> Even length -- bipartite always (in case more than once cycle, all cycles has to be even length)
                                     --> Odd length --  non-bipartite always
@@ -54,6 +55,39 @@ public class Q11_BipartiteGraph {
                     }
                 }
             }
+        }
+        return true;
+    }
+
+
+    /*
+     Theory-2 :
+     Graphs which can be coloured using two clours such that, no two adjacent nodes have same colour
+
+     Solution :
+
+*/
+
+    static boolean isBipartiteGraph_2(ArrayList<ArrayList<Edge>> graph){
+        int[] colourTrack = new int[graph.size()+1];
+        Arrays.fill(colourTrack,-1); // initially filling array with -1 i.e no colour, 1--> Black, 0 --> White
+
+        for (int i =1;i<= graph.size();i++) {
+            if (colourTrack[i] == -1){ // check if already coloured
+                Queue<Integer> queue = new ArrayDeque<>();
+                queue.add(i);
+                colourTrack[i] = 1;
+                while (!queue.isEmpty()) {
+                    Integer node = queue.peek(); // main node
+                    for (Edge e: graph.get(node)){ // neighbours
+                        if(colourTrack[e.neighbour]==-1){
+                            colourTrack[e.neighbour] = Math.abs(1-colourTrack[node]);// marking colour opposite to of main node
+                            queue.add(e.neighbour);
+                        }else if(colourTrack[e.neighbour] == colourTrack[node]) //checking if main node and neighbour of same colour return false
+                                return false;
+                    }
+                }
+             }
         }
         return true;
     }
