@@ -2,7 +2,7 @@ package graph;
 
 import java.util.ArrayList;
 
-public class Q3_MultiSolverPath {
+public class Q03_MultiSolverPath {
     /* For the given set of points find the following paths :
         1. Smallest Path from source vertex to destination vertex
         2. Largest Path from source vertex to destination vertex

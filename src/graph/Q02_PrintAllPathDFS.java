@@ -2,7 +2,7 @@ package graph;
 
 import java.util.ArrayList;
 
-public class Q2_PrintAllPathDFS {
+public class Q02_PrintAllPathDFS {
 
     /* Given two points i.e. source and destination, print all the path exists between those two points
     *  Using Depth First Search (DFS)

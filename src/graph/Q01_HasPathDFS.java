@@ -2,7 +2,7 @@ package graph;
 
 import java.util.ArrayList;
 
-public class Q1_HasPathDFS {
+public class Q01_HasPathDFS {
 
 /* Given two points i.e. source and destination, find is the path exists between those two points
 *  Using Depth First Search (DFS)

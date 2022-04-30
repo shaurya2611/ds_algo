@@ -7,5 +7,5 @@ package graph;
    Solution : find the no of connected componenets, if the size of array ==1, then graph is conncted
 *
 * */
-public class Q5_IsGraphConnected {
+public class Q05_IsGraphConnected {
 }

@@ -14,7 +14,7 @@ import java.util.HashSet;
 
             For visited array its convinient to make hasSet for that( easy in counting)
 */
-public class Q8_HamiltonCycleAndPath {
+public class Q08_HamiltonCycleAndPath {
 
     static void printAllHamiltonCycleAndPath(int src, ArrayList<ArrayList<Edge>> graph, HashSet<Integer> visited, String psf, int orgSrc){
         // base condition to check when all points are visited once

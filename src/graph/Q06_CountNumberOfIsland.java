@@ -21,7 +21,7 @@ Solution : Problem is solved same as 'Connected Components' problem.
             Visit all the vertex (ony island one) and try to crate the tree for that, that will give the component .
             Mark the  visited once and finally count the no of connected components (here no need to add components).
 * */
-public class Q6_CountNumberOfIsland {
+public class Q06_CountNumberOfIsland {
 
 
     static void countOfIsland(int[][] graph){

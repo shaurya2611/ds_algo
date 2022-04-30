@@ -14,7 +14,7 @@ import java.util.*;
     Time Complexity : O(n)
     Space Complexity : O(n)
 */
-public class Q9_BFSTraversal {
+public class Q09_BFSTraversal {
     static class Pair{
         int vertex;
         String psf;

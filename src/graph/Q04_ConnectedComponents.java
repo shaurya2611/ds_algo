@@ -14,7 +14,7 @@ import java.util.ArrayList;
 Solution : Iterate over each vertex and for each vertex's form possible tree and gets its corresponding components
 *
 * */
-public class Q4_ConnectedComponents {
+public class Q04_ConnectedComponents {
 
     static ArrayList<ArrayList<Integer>> findAllConnectedComponents(ArrayList<ArrayList<Edge>> graph){
         ArrayList<ArrayList<Integer>> componentsList = new ArrayList<>();

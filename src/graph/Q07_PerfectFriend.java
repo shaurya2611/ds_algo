@@ -15,11 +15,11 @@ Solution :  Using Connected Components find the number of clubs from the given d
             No of connected components = no of clubs
             Npw find the all possible combination of pairs
 * */
-public class Q7_PerfectFriend {
+public class Q07_PerfectFriend {
 
     static Integer CountPerfectFriendPair(ArrayList<ArrayList<Edge>> graph){
         // Getting array list of all the connecting componenets
-        ArrayList<ArrayList<Integer>> connectedComponents =  Q4_ConnectedComponents.findAllConnectedComponents(graph);
+        ArrayList<ArrayList<Integer>> connectedComponents =  Q04_ConnectedComponents.findAllConnectedComponents(graph);
 
         // Now finding the possible pairs
         // e.g. --> [ [0,1], [2,3], [4,5,6] ] --> c1*c2, c1*c3, c2*c3
