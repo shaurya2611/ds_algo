@@ -26,9 +26,8 @@ public class IntersectionOfTwoSortedArray {
 
             if (arr1[pointerArr1] > arr2[pointerArr2])
                 pointerArr2++;
-            else if (arr1[pointerArr1] < arr2[pointerArr2]) {
+            else if (arr1[pointerArr1] < arr2[pointerArr2])
                 pointerArr1++;
-            }
             else {
                 if (lastElementAdded!=arr1[pointerArr1]) {
                     intersectionArray.add(arr1[pointerArr1]);
@@ -47,13 +46,6 @@ public class IntersectionOfTwoSortedArray {
 
     public static void main(String[] args) {
         int[] arr1 = {1, 2, 3, 4, 6,7};
-        int missisng = 0;
-        for(int i=1; i<arr1.length;i++){
-            if(arr1[i] - arr1[i-1] != 1){
-                missisng = arr1[i] -1 ;
-                break;
-            }
-        }
         int[] arr2 = {3, 4, 5, 6};
         intersectionOfSortedArray(arr1,arr2);
     }
