@@ -2,7 +2,7 @@ package array.easy;
 
 import java.util.Arrays;
 
-public class RotateArray {
+public class RotateArrayLeft {
 
     // input = {1,2,3,4,5} --output--> {2,3,4,5,1}
     // Time : O(n) , Space : O(1)
