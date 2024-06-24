@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class IntersectionOfTwoSortedArray {
         /*
-    	•	Union of two sets  A  and  B  is the set containing all elements that are in  A , in  B , or in both.
-        •	Intersection of two sets  A  and  B  is the set containing only the elements that are in both  A  and  B .
+    	•	Union        : unique elements including both A and B set
+        •	Intersection : Only common elements between two sets A and B
 
         	 A = {1, 2, 3, 4}
 	     	 B = {3, 4, 5, 6}
