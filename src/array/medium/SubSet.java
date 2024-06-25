@@ -1,10 +1,11 @@
-package array;
+package array.medium;
 
 public class SubSet {
-
+	/* SUBARRAY - sub-array are always continuous set of elements from the array
+		No of subarray = n(n+1)/2
+		no of subsequences = 2^n
+	*/
 	public static void main(String[] args) {
-		// No of subarray = n(n+1)/2
-		// no of subsequences = 2^n
 		int[] arr = {10,20,30};
 		int limit = (int) Math.pow(2, arr.length);
 		String bin="";
