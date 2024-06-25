@@ -1,7 +1,16 @@
 package hashing;
 
 import java.util.HashMap;
+/* Subarray : contiguous part of an array. This means all the elements of the subarray appear
+				  in the same order as in the original array and are next to each other.
+		No of subarray = n(n+1)/2
+		Subarray of [1, 2, 3] = [1], [1,2], [1,2,3], [2], [2,3], [3]
 
+	   Subset : A subset is any combination of elements from an array, regardless of their order and contiguity.
+	   			This includes the empty set and the set itself.
+		no of subsequences = 2^n
+		Subset of [1,2,3] = [], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]
+	*/
 public class LongestSubarrayEqual_0and1 { // same as LargestSubArrayZeroSum
 	
   /*
