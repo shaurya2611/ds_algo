@@ -25,21 +25,56 @@ public class LargestSubArraySumK {
         Output : 0 , There is no such sub-array with sum 6.
     */
 
-    public static void hasingSumK(int[] arr, int sumK){
-    // array --{    3,  9,  -2,     4,  1,  7,  2,  6,  -5,     8,  3,  -7,     6,  2,  1  }
-    // k = 5
-    // sum --    0, 3,  12,  10,   14,  15
-        HashMap<Integer,Integer> hm = new HashMap<>();
-        int sum = 0;
-        hm.put(0,1);
-        int noOfSubarray = 0;
-        for (int i=0;i<arr.length;i++){
-            sum+=arr[i];
-            if(hm.containsKey(sum-sumK)){
-                noOfSubarray++;
-            }else {
-                hm.put(sum,1);
+    //Using hashing with unordered map: Time o(n) and space O(n)
+    public static int largestSubArraySumKBetterSolution(int[] arr, int k){
+       int sum = 0;
+       int largestLengthSubarray = 0;
+       HashMap<Integer, Integer> hashMap = new HashMap<>();
+       hashMap.put(0,0);
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+            if (sum == k){
+                largestLengthSubarray = Math.max(i+1, largestLengthSubarray);
+            }
+            if(!hashMap.containsKey(sum)){
+                hashMap.put(sum, i);
+            }
+            if (hashMap.containsKey(sum - k)){
+                int currentLengthSubarray = i - hashMap.get(sum - k)  ;
+                largestLengthSubarray = Math.max(currentLengthSubarray, largestLengthSubarray);
             }
         }
+        return largestLengthSubarray;
+    }
+
+    /*
+    * Using sliding window : two pointer to traverse throu the array
+    *  Time o(n) and space O(1)
+    * */
+    public static int largestSubArraySumKOptimalSolution(int a[], int k){
+        int left = 0, right = 0;
+        long sum = a[0];
+        int maxLen = 0;
+        int n = a.length;
+
+        while (right < n) {
+            while (left <= right && sum > k) {
+                sum -= a[left];
+                left++;
+            }
+            if (sum == k)
+                maxLen = Math.max(maxLen, right - left + 1);
+
+            right++;
+            if (right < n)
+                sum += a[right];
+        }
+        return maxLen;
+    }
+
+
+    public static void main(String[] args){
+        int[] arr  = {-1, 2, 3,0,0,1}; int k = 6;
+        System.out.println(largestSubArraySumKOptimalSolution(arr,k));
     }
 }
