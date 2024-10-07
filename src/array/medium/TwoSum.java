@@ -52,6 +52,7 @@ public class TwoSum {
     We will keep a left pointer at the first index and a right pointer at the last index. Now until left < right,
     we will check the sum of arr[left] and arr[right]. Now if the sum < target, we need bigger numbers and so we
     will increment the left pointer. But if sum > target, we need to consider lesser numbers and so we will decrement the right pointer.
+    using 2 pointer, Time -> O(nlogn), Space -> O(1)
     * */
     public static void optimalSolution(int[] arr, int targetSum){
         Arrays.sort(arr);

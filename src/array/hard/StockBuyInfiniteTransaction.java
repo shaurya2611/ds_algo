@@ -1,4 +1,4 @@
-package array;
+package array.hard;
 
 public class StockBuyInfiniteTransaction {
 
