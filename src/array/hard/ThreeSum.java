@@ -45,7 +45,7 @@ Example: {-1,0,1,2,-1,-4}, Output -> [-1,-1, 2] , [-1, 0, 1]
         int target = 0;
         for (int i=0; i<nums.length; i++){ // N^2
 
-            //intial check to remove duplicates
+            //initial check to remove duplicates for the first element
             if (i != 0 && nums[i] == nums[i - 1])
                 continue;
 
