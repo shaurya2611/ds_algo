@@ -16,7 +16,7 @@ public class StockBuyAndSellOneTransaction {
       Solution: 2 (Linear Traversal) Aim is to maximize profit, On each traversal
                   Maintain a minimum from the start of the array and compare it with every element of the array, if it is greater
                   than the minimum then take the difference and maintain it in max, otherwise update the minimum.
-                  Time -> O(n^2) , Space -> (1)
+                  Time -> O(n) , Space -> (1)
     */
 
     public int optimalApproach(int[] arr){
