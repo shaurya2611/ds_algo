@@ -19,7 +19,7 @@ public class MergeSortedArray {
 
     /*
     Using the 2 pointers, we will swap the bigger elements of arr1[] with the smaller elements of arr2[] until
-    the minimum of arr2[] becomes greater or equal to the maximum of arr1[].
+    the minimum of arr2[] becomes greater or equal to the maximum of arr1[]. And then sort both arrays
     Time: O(m+n + nlogn+ mlogn)
     * */
 
