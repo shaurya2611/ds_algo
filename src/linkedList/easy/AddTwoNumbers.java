@@ -1,4 +1,4 @@
-package linkedList;
+package linkedList.easy;
 
 public class AddTwoNumbers extends Node {
 	

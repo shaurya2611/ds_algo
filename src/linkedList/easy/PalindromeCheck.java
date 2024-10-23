@@ -1,4 +1,4 @@
-package linkedList;
+package linkedList.easy;
 
 public class PalindromeCheck extends Reverse {
 	/*Given : The head of a singly linked list, return true if it is a palindrome.

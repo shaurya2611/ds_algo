@@ -1,4 +1,4 @@
-package linkedList;
+package linkedList.easy;
 
 /*
  * Given :  You are given the head of a singly linked-list. The list can be represented as:
