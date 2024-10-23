@@ -26,13 +26,13 @@ public class IntersectionPointOf2List {
 	
 	
 	//Solution 3
-	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+	public Node getIntersectionNode(Node headA, Node headB) {
 		
 		if(headA==null || headB==null)
 			return null;
 		
-		ListNode dummyA = headA;
-		ListNode dummyB = headB;
+		Node dummyA = headA;
+		Node dummyB = headB;
 		int lenA = 0;
 		int lenB = 0;
 		while(dummyA!=null || dummyB!=null) {
@@ -48,8 +48,8 @@ public class IntersectionPointOf2List {
 		
 		int lenDiff = (lenA>lenB) ? (lenA-lenB) : (lenB-lenA);
 	
-		ListNode smallerList = headA;
-		ListNode largerList = headB;
+		Node smallerList = headA;
+		Node largerList = headB;
 		
 		if(lenA>lenB) {
 			smallerList = headB;
@@ -60,7 +60,7 @@ public class IntersectionPointOf2List {
 		for (int i = 0; i < lenDiff; i++) 
 			largerList = largerList.next;
 		
-		ListNode intersect = null;
+		Node intersect = null;
 		
 		while(largerList!=null && smallerList!=null) {
 			if(largerList==smallerList) {
@@ -75,12 +75,12 @@ public class IntersectionPointOf2List {
     }
 	
 	//Solution 4
-	public ListNode getIntersectNode(ListNode headA, ListNode headB) {
+	public Node getIntersectNode(Node headA, Node headB) {
 		if(headA==null || headB==null)
 			return null;
 		
-		ListNode dummyA = headA;
-		ListNode dummyB = headB;
+		Node dummyA = headA;
+		Node dummyB = headB;
 		
 		while(dummyA!=dummyB) {
 			dummyA = dummyA==null ? headB : dummyA.next;

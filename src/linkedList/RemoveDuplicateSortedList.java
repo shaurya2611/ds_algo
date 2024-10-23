@@ -10,11 +10,11 @@ public class RemoveDuplicateSortedList {
 	 * 
 	 * Solution : Time - O(n), Space - (1)
 	 * */	
-	public ListNode deleteDuplicates(ListNode head) {
-        ListNode t1 = head;      
+	public Node deleteDuplicates(Node head) {
+        Node t1 = head;
         while(t1!=null && t1.next!=null){
             if(t1.val==t1.next.val){
-                ListNode t2 = t1;
+                Node t2 = t1;
                 while(t2.next!=null && t2.val==t2.next.val){
                    t2 = t2.next; 
                 }

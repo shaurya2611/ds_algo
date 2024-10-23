@@ -11,15 +11,15 @@ public class OddEvenList {
 	 * Solution : Form to new node and link alternative odd and even nodes to both simultaneously.
 	 * 			  Time - O(n) , Space - O(1) 
 	 * */
-	public static ListNode oddEven(ListNode head) {
+	public static Node oddEven(Node head) {
 		
 		if(head==null || head.next==null || head.next.next==null)
 			return head;
 		
-		ListNode oddNodes = new ListNode();
-		ListNode evenNodes = new ListNode();
-		ListNode odd = oddNodes;
-		ListNode even = evenNodes;
+		Node oddNodes = new Node();
+		Node evenNodes = new Node();
+		Node odd = oddNodes;
+		Node even = evenNodes;
 		
 		while(head.next!=null) {
 			oddNodes.next = head;

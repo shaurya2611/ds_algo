@@ -8,12 +8,12 @@ public class RemoveGivenElement {
 	 *  Solution : Time - O(n) , Space - O(1)*/
 	
 	
-	public ListNode removeElements(ListNode head, int val) {
+	public Node removeElements(Node head, int val) {
         
         if(head==null)
             return head;
         
-        ListNode rtnhead = removeElements(head.next,val);
+        Node rtnhead = removeElements(head.next,val);
         
         if(head.val == val)
             return rtnhead;

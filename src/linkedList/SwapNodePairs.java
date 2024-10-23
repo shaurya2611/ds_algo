@@ -1,20 +1,20 @@
 package linkedList;
 
-public class SwapNodePairs extends ListNode{
+public class SwapNodePairs extends Node {
 	
 	
-	 public static ListNode swapPairs(ListNode head) {
+	 public static Node swapPairs(Node head) {
 	        //Incase no element or only one element in linked list then return head
-	        ListNode headrtn = null;
+	        Node headrtn = null;
 	        if(head==null||head.next==null)
 	            return head;
 	        // more then one element return 2 element as head(as value will be swapped will become first element)
 	        else
 	            headrtn = head.next;
 	        
-	        ListNode t1 = head;
-	        ListNode t2 = null;
-	        ListNode t3 = null;
+	        Node t1 = head;
+	        Node t2 = null;
+	        Node t3 = null;
 	        
 	        while(t1!=null && t1.next!=null)     {
 	            t3 = t1.next;

@@ -18,13 +18,13 @@ public class LinkedListCycle {
 	   			   * If fast = null; List is not circular
 	   			    Time O(n) , Space - O(1)
 	 * */
-	 public boolean hasCycle(ListNode head) {
+	 public boolean hasCycle(Node head) {
 		 
 		 if(head==null || head.next==null)
 		 	return false;
 		 
-		 ListNode slow = head;
-		 ListNode fast = head;
+		 Node slow = head;
+		 Node fast = head;
 		 
 		 while(fast.next!=null && fast.next.next!=null) { // (fast!=null && fast.next!=null) - also work
 			 slow = slow.next;

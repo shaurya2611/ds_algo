@@ -2,7 +2,7 @@ package linkedList;
 
 
 
-public class RemoveNthElementFromEnd extends ListNode{
+public class RemoveNthElementFromEnd extends Node {
 	
 	/*
 	 * Given the head of a linked list, remove the nth node from the end of the list and return its head.
@@ -13,13 +13,13 @@ public class RemoveNthElementFromEnd extends ListNode{
 	 * 					  fast reaches end of list. Slow will be pointing to element just bore to be deleted.
 	 * */
 	
-	public static ListNode removeNthFromEnd(ListNode head, int n) {
+	public static Node removeNthFromEnd(Node head, int n) {
 			
 			// Creating one new node before head
-		    ListNode extraNode = new ListNode();
+		    Node extraNode = new Node();
 	        extraNode.next = head;
-	        ListNode fast = extraNode;
-	        ListNode slow = extraNode;
+	        Node fast = extraNode;
+	        Node slow = extraNode;
 	        
 	        // Moving fast pointer move "n" steps from starting
 			for (int i = 0; i < n; i++)

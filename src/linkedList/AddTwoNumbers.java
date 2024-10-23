@@ -1,13 +1,13 @@
 package linkedList;
 
-public class AddTwoNumbers extends ListNode{
+public class AddTwoNumbers extends Node {
 	
 	
 	/* Ques- Given two no in form in reverse order in of linked list*
 	 * Solution- Trverse the linked lists and start adding from head and maintain carry if greater than 9 */
-	 public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-         ListNode ans = new ListNode();
-         ListNode temp = ans;
+	 public Node addTwoNumbers(Node l1, Node l2) {
+         Node ans = new Node();
+         Node temp = ans;
          int carry = 0;
          
          // loop run till both the linked list are traversed
@@ -28,19 +28,19 @@ public class AddTwoNumbers extends ListNode{
              }
              
            if(sum>9){
-               ListNode node = new ListNode(sum-10 , null);
+               Node node = new Node(sum-10 , null);
                 carry = 1;
                temp.next = node;             
            }  
            else{
-                ListNode node = new ListNode(sum, null);
+                Node node = new Node(sum, null);
                temp.next = node;
                carry = 0;
            } 
            temp = temp.next;  
          }
          if(carry!=0){
-              ListNode node = new ListNode(1, null);
+              Node node = new Node(1, null);
               temp.next = node;}
          return ans.next;
      }

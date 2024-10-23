@@ -12,27 +12,27 @@ package linkedList;
 
 public class ReorderList {
 	
-	public void reorderList(ListNode head) {
+	public void reorderList(Node head) {
         if(head==null|| head.next==null ||head.next.next==null)
             return;
         
         // Mid of linked list
-        ListNode slow = head;
-        ListNode fast = head;
+        Node slow = head;
+        Node fast = head;
         while(fast.next!=null && fast.next.next!=null){
             slow = slow.next;
             fast = fast.next.next;
         }
         
         // Second half list reversal
-        ListNode reversedList = reverseList(slow.next);
+        Node reversedList = reverseList(slow.next);
         slow.next = null;
         
         
         // Both list merge
         while (reversedList!=null) {
-            ListNode firstNext = head.next;
-            ListNode secondNext = reversedList.next;
+            Node firstNext = head.next;
+            Node secondNext = reversedList.next;
             head.next = reversedList;
             reversedList.next=firstNext;
             reversedList = secondNext;
@@ -42,17 +42,17 @@ public class ReorderList {
          
     }
     
-     public ListNode reverseList(ListNode head) { // 1--> 2--> 3-->4-->5
+     public Node reverseList(Node head) { // 1--> 2--> 3-->4-->5
         
         //base case
         if(head==null || head.next==null)
             return head;
         
         // Hypothesis (recusrsion has worked on whole list except first element )
-        ListNode rtn = reverseList(head.next); // 1        5-->4-->3-->2
+        Node rtn = reverseList(head.next); // 1        5-->4-->3-->2
         
         //Induction (add 1st element to end of new linked list)
-        ListNode temp = head.next;
+        Node temp = head.next;
         temp.next = head;
         head.next = null;
         return rtn;

@@ -17,14 +17,14 @@ public class RotateList {
 	 * 			   MAKE LIST CIRCULAR by joining head and tail. After that move tail = no of traversal 	
 	 *  
 	 * */
-	 public static ListNode rotateRight(ListNode head, int k) {
+	 public static Node rotateRight(Node head, int k) {
 	        
 	        if(head==null || head.next==null || k==0)
 	            return head;
 	        	         
 	        // Finding size and tail of list
 	        int size = 1;
-	        ListNode tail = head;
+	        Node tail = head;
 	        while(tail.next!=null){
 	            size++;
 	            tail = tail.next;

@@ -8,15 +8,15 @@ public class RemoveDuplicateSortedList2 {
 	 * 			Input: head = [1,2,3,3,4,4,5]
 				Output: [1,2,5]
 	 * */
-	public ListNode deleteDuplicates(ListNode head) {
-		ListNode rtnHead = new ListNode();
+	public Node deleteDuplicates(Node head) {
+		Node rtnHead = new Node();
 		rtnHead.next = head;
-		ListNode t = rtnHead;
+		Node t = rtnHead;
 		
-        ListNode t1 = t.next;      
+        Node t1 = t.next;
         while(t1!=null && t1.next!=null){
             if(t1.val==t1.next.val){
-                ListNode t2 = t1;
+                Node t2 = t1;
                 while(t2.next!=null && t2.val==t2.next.val){
                    t2 = t2.next; 
                 }

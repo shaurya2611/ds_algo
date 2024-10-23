@@ -13,11 +13,11 @@ public class PartitionList {
 	 * 			  Time - O(n) and Space - O(1)
 	 * */
 	
-	 public ListNode partition(ListNode head, int x) { 
-	        ListNode before = new ListNode();
-	        ListNode beforePtr = before;
-	        ListNode after = new ListNode();
-	        ListNode afterPtr = after;
+	 public Node partition(Node head, int x) {
+	        Node before = new Node();
+	        Node beforePtr = before;
+	        Node after = new Node();
+	        Node afterPtr = after;
 	        
 	        while(head!=null){
 	        	// if element less then GIVEN NO then join it with Before list

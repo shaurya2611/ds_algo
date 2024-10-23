@@ -22,12 +22,12 @@ public class LinkedListCycle2 {
 	   			     Time O(n) , Space - O(1)
 	 * */
 	
-	 public ListNode detectCycle(ListNode head) {
+	 public Node detectCycle(Node head) {
 		 if(head==null || head.next==null)
 			 	return null;
 			 
-			 ListNode slow = head;
-			 ListNode fast = head;
+			 Node slow = head;
+			 Node fast = head;
 			 int flag = 0;
 			 
 			 while(fast.next!=null && fast.next.next!=null) { 

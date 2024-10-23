@@ -1,6 +1,6 @@
 package linkedList;
 
-public class PalindromeCheck extends ReverseList {
+public class PalindromeCheck extends Reverse {
 	/*Given : The head of a singly linked list, return true if it is a palindrome.
 	 *Solution 1: Traverse and store whole linked list in array.
 	 *			  Traverse whole Array and check palindrome
@@ -10,10 +10,10 @@ public class PalindromeCheck extends ReverseList {
 	 *			  Start comparing element from 1 and mid+1, if all equal then palindrome else not 
 	 *			  Time - O{(n/2) + (n/2) + (n/2)} , Space - O(1)  
 	 * */
-	public boolean isPalindrome(ListNode head) {
+	public boolean isPalindrome(Node head) {
         //mid of linked list (after loop ends slow points to mid)
-        ListNode slow = head;
-        ListNode fast = head;
+        Node slow = head;
+        Node fast = head;
         
         // (n/2 complexity in findind mid)
         while(fast.next!=null && fast.next.next!=null){
